@@ -11,19 +11,16 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
-        "groups": [
+        "tab": "Guide",
+        "pages": [
+          "introduction",
+          "quickstart",
           {
-            "group": "Get Started",
+            "group": "Core Features",
             "pages": [
-              "introduction",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Essentials",
-            "pages": [
+              "core/bot",
+              "core/conversation",
+              "core/prompt",
               "essentials/markdown",
               "essentials/code",
               "essentials/images",
@@ -35,67 +32,64 @@
         ]
       },
       {
-        "tab": "API Reference",
-        "groups": [
+        "tab": "API",
+        "pages": [
+          "api/introduction",
           {
-            "group": "API Documentation",
+            "group": "Conversation",
             "pages": [
-              "api-reference/introduction"
+              "api/conversation/request"
             ]
           },
           {
-            "group": "Endpoint Examples",
+            "group": "Bot",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete"
+              "api/bot/create",
+              "api/bot/get-id"
+            ]
+          },
+          {
+            "group": "Prompts",
+            "pages": [
+              "api/prompt/modify",
+              "api/prompt/retrieve"
+            ]
+          },
+          {
+            "group": "Message",
+            "pages": [
+              "api/message/get-total-count"
             ]
           }
         ]
+      },
+      {
+        "tab": "Resource",
+        "pages": [
+          "resource/blog",
+          "resource/contact"
+        ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/favicon.png",
+    "dark": "/favicon.png"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
-    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
+      "label": "Get Started",
       "href": "https://dashboard.mintlify.com"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://messagesimproved.com/",
+      "x": "https://x.com/meimessaging",
+      "facebook": "https://www.facebook.com/meimessaging/",
+      "instagram": "https://github.com/mintlify",
+      "youtube": "https://www.youtube.com/@meiapp5208"
     }
   }
 }
