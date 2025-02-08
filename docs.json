@@ -7,25 +7,22 @@
     "light": "#90dad3",
     "dark": "#17a89a"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/assets/favicon.png",
   "navigation": {
     "tabs": [
       {
         "tab": "Guide",
         "pages": [
-          "introduction",
-          "quickstart",
+          "guide/introduction",
+          "guide/quickstart",
           {
             "group": "Core Features",
             "pages": [
-              "core/bot",
-              "core/conversation",
-              "core/prompt",
-              "essentials/markdown",
+              "guide/core/bot",
+              "guide/core/prompt",
+              "guide/core/conversation",
               "essentials/code",
-              "essentials/images",
               "essentials/settings",
-              "essentials/navigation",
               "essentials/reusable-snippets"
             ]
           }
@@ -36,16 +33,16 @@
         "pages": [
           "api/introduction",
           {
-            "group": "Conversation",
-            "pages": [
-              "api/conversation/request"
-            ]
-          },
-          {
             "group": "Bot",
             "pages": [
               "api/bot/create",
               "api/bot/get-id"
+            ]
+          },
+          {
+            "group": "Conversation",
+            "pages": [
+              "api/conversation/request"
             ]
           },
           {
@@ -73,8 +70,8 @@
     ]
   },
   "logo": {
-    "light": "/favicon.png",
-    "dark": "/favicon.png"
+    "light": "/assets/favicon.png",
+    "dark": "/assets/favicon.png"
   },
   "navbar": {
     "primary": {
