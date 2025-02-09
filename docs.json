@@ -51,31 +51,14 @@
         "tab": "API",
         "pages": [
           "guide/introduction",
-          "api/introduction",
+          "guide/quickstart",
+          "guide/features",
           {
-            "group": "Conversation",
+            "group": "Core Concepts",
             "pages": [
-              "api/conversation/conversation_api"
-            ]
-          },
-          {
-            "group": "Bot",
-            "pages": [
-              "api/bot/create_bot",
-              "api/bot/get_bot_ids"
-            ]
-          },
-          {
-            "group": "Prompts",
-            "pages": [
-              "api/prompt/modify_prompt",
-              "api/prompt/retrieve_prompt"
-            ]
-          },
-          {
-            "group": "Message",
-            "pages": [
-              "api/message/get_total_message_count"
+              "guide/core/bot",
+              "guide/core/prompt",
+              "guide/core/conversation"
             ]
           }
         ]
