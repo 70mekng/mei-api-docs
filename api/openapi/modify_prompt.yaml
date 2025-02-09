@@ -1,0 +1,71 @@
+openapi: 3.0.0
+info:
+  title: Prompt Retrieval API
+  description: API for retrieving and modifying prompts for selected bots
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+paths:
+  /modify_prompt:
+    post:
+      summary: Modify a prompt for a selected bot
+      operationId: modifyPrompt
+      parameters:
+        - in: header
+          name: api-key
+          required: true
+          schema:
+            type: string
+          description: API key for authentication.
+        - in: header
+          name: admin-email
+          required: true
+          schema:
+            type: string
+          description: Email of the admin making the request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                editedString:
+                  type: string
+                  description: The new prompt text.
+                selectedBot:
+                  type: string
+                  description: The ID of the selected bot (optional, falls back to session).
+      responses:
+        '200':
+          description: Prompt edited successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'Prompt edited successfully'
+        '400':
+          description: Error due to prompt exceeding character limit
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Error:
+                    type: string
+                    description: Error message details.
+        '500':
+          description: Error editing prompt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error details
+

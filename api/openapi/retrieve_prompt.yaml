@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Prompt Retrieval API
+  description: API for retrieving prompts for selected bots
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+paths:
+  /retrieve_prompt:
+    get:
+      summary: Retrieve a prompt for a selected bot
+      operationId: retrievePrompt
+      parameters:
+        - in: header
+          name: api-key
+          required: true
+          schema:
+            type: string
+          description: API key for authentication.
+        - in: header
+          name: admin-email
+          required: true
+          schema:
+            type: string
+          description: Email of the admin making the request.
+        - name: selectedBot
+          in: query
+          required: true
+          description: The ID of the selected bot
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A prompt was successfully retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  prompt:
+                    type: string
+                    description: The prompt associated with the selected bot
+        '500':
+          description: Error retrieving the prompt
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error details

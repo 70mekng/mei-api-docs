@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Bot Creation API
+  description: API for creating bots.
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+paths:
+  /create_bot:
+    post:
+      summary: Create a new bot
+      description: Creates a new bot with the specified name, opening message, and prompt.
+      operationId: createBot
+      parameters:
+        - in: header
+          name: api-key
+          required: true
+          schema:
+            type: string
+          description: API key for authentication.
+        - in: header
+          name: admin-email
+          required: true
+          schema:
+            type: string
+          description: Email of the admin making the request.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the bot.
+                  example: "BobBot"
+                openingMessage:
+                  type: string
+                  description: The initial message that the bot will send.
+                  example: "Hello! How can I assist you today?"
+                prompt:
+                  type: string
+                  description: The prompt that defines the bot's behavior.
+                  example: "Please assist users with common queries about our services."
+              required:
+                - name
+                - openingMessage
+                - prompt
+      responses:
+        '200':
+          description: Bot created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bot_id:
+                    type: string
+                    description: Unique identifier for the newly created bot.
+                    example: "74b96c5b-7376-430c-a6d7-b78cfd6aa32c"
+        '400':
+          description: Bad Request
+        '401':
+          description: Unauthorized - Invalid API key or admin email.
+        '500':
+          description: Internal Server Error

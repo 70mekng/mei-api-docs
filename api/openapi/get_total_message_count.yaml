@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: Prompt Retrieval API
+  description: API for retrieving prompts for selected bots
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+paths:
+  /get_total_message_count:
+    get:
+      summary: Get the total message count from all of a client's bots
+      operationId: getTotalMessageCount
+      parameters:
+        - in: header
+          name: api-key
+          required: true
+          schema:
+            type: string
+          description: API key for authentication.
+        - in: header
+          name: admin-email
+          required: true
+          schema:
+            type: string
+          description: Email of the admin making the request.
+      responses:
+        '200':
+          description: A prompt was successfully retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message_count:
+                    type: string
+                    description: The total count of messages sent by all bots on the admin account
+        '500':
+          description: Error getting message count
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    description: Error details

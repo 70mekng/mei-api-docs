@@ -7,55 +7,55 @@
     "light": "#90dad3",
     "dark": "#17a89a"
   },
-  "favicon": "/assets/favicon.png",
+  "favicon": "/assets/logo.png",
   "navigation": {
     "tabs": [
-      {
-        "tab": "Guide",
-        "pages": [
-          "guide/introduction",
-          "guide/quickstart",
-          {
-            "group": "Core Features",
-            "pages": [
-              "guide/core/bot",
-              "guide/core/prompt",
-              "guide/core/conversation",
-              "essentials/code",
-              "essentials/settings",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
       {
         "tab": "API",
         "pages": [
           "api/introduction",
           {
-            "group": "Bot",
+            "group": "Conversation",
             "pages": [
-              "api/bot/create",
-              "api/bot/get-id"
+              "api/conversation/conversation_api"
             ]
           },
           {
-            "group": "Conversation",
+            "group": "Bot",
             "pages": [
-              "api/conversation/request"
+              "api/bot/create_bot",
+              "api/bot/get_bot_ids"
             ]
           },
           {
             "group": "Prompts",
             "pages": [
-              "api/prompt/modify",
-              "api/prompt/retrieve"
+              "api/prompt/modify_prompt",
+              "api/prompt/retrieve_prompt"
             ]
           },
           {
             "group": "Message",
             "pages": [
-              "api/message/get-total-count"
+              "api/message/get_total_message_count"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Guide",
+        "pages": [
+          "guide/introduction",
+          "guide/quickstart",
+          "guide/features",
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "guide/core/bot",
+              "guide/core/prompt",
+              "guide/core/conversation",
+              "essentials/settings",
+              "essentials/reusable-snippets"
             ]
           }
         ]
@@ -70,8 +70,8 @@
     ]
   },
   "logo": {
-    "light": "/assets/favicon.png",
-    "dark": "/assets/favicon.png"
+    "light": "/assets/logo.png",
+    "dark": "/assets/logo.png"
   },
   "navbar": {
     "primary": {
@@ -80,6 +80,7 @@
       "href": "https://dashboard.mintlify.com"
     }
   },
+  
   "footer": {
     "socials": {
       "website": "https://messagesimproved.com/",

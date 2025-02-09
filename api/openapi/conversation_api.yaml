@@ -1,0 +1,101 @@
+openapi: 3.0.3
+info:
+  title: Conversation API
+  description: API for handling conversation requests with various parameters as query parameters.
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+paths:
+  /conversation_api:
+    post:
+      summary: Handle conversation requests
+      description: Receives conversation parameters as query parameters and processes the request.
+      parameters:
+        - name: input
+          in: query
+          required: true
+          schema:
+            type: string
+            description: The input message from the user.
+        - name: bot
+          in: query
+          required: true
+          schema:
+            type: string
+            description: The name of the bot handling the conversation.
+        - name: creator
+          in: query
+          required: true
+          schema:
+            type: string
+            description: Email of the creator of the request.
+        - name: api_key
+          in: query
+          required: true
+          schema:
+            type: string
+            description: API key for authentication.
+        - name: user_id
+          in: query
+          required: true
+          schema:
+            type: string
+            description: Unique identifier for the user.
+        - name: user_phone
+          in: query
+          schema:
+            type: string
+            description: Phone number of the user.
+        - name: refresh
+          in: query
+          schema:
+            type: boolean
+            description: Indicates if the request is a refresh request. Default is `false`.
+            example: false
+        - name: model
+          in: query
+          schema:
+            type: string
+            description: The model to use for the conversation. Default is `gpt4`.
+            example: gpt4
+      responses:
+        '200':
+          description: Successfully processed the request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: success
+                  message:
+                    type: string
+                    example: Request processed successfully
+        '400':
+          description: Bad request, invalid input data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: Invalid request data
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: error
+                  message:
+                    type: string
+                    example: An unexpected error occurred

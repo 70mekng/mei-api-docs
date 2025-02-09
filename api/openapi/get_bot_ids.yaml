@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: Get Bot ids
+  description: API for retrieving ids of all bot with given name.
+  version: 1.0.0
+servers:
+  - url: https://botsettings.messagesimproved.com
+    description: Main production server
+components:
+  schemas:
+    BotIDResponse:
+      type: array
+      items:
+        type: string
+        description: Unique identifier for each bot.
+        example: "74b96c5b-7376-430c-a6d7-b78cfd6aa32c"
+  parameters:
+    AdminEmailHeader:
+      name: admin-email
+      in: header
+      required: true
+      schema:
+        type: string
+      description: Email of the admin making the request.
+    ApiKeyHeader:
+      name: api-key
+      in: header
+      required: true
+      schema:
+        type: string
+      description: API key for authentication.
+paths:
+  /get_bot_ids:
+    get:
+      summary: Retrieve bot IDs by bot name
+      description: Returns a list of bot IDs for the given bot name.
+      operationId: getBotIds
+      parameters:
+        - $ref: '#/components/parameters/AdminEmailHeader'
+        - $ref: '#/components/parameters/ApiKeyHeader'
+        - name: bot_name
+          in: query
+          required: true
+          schema:
+            type: string
+          description: The name of the bot for which to the retrieve IDs.
+      responses:
+        '200':
+          description: List of bot IDs matching the specified bot name
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BotIDResponse'
+        '400':
+          description: Bad Request - The request was invalid or missing required parameters.
+        '401':
+          description: Unauthorized - Invalid API key or admin email.
+        '500':
+          description: Internal Server Error - An error occurred on the server side.
