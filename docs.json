@@ -1,15 +1,52 @@
 {
   "$schema": "https://mintlify.com/docs.json",
+
   "theme": "mint",
   "name": "Message Improved",
+  "description": "Mei API document",
+
   "colors": {
     "primary": "#53d5c8",
     "light": "#90dad3",
     "dark": "#17a89a"
   },
+  "logo": {
+    "light": "/assets/logo.png",
+    "dark": "/assets/logo.png"
+  },
   "favicon": "/assets/logo.png",
+
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact Us",
+        "href": "https://calendly.com/es-lee"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Get Started",
+      "href": "https://bots.messagesimproved.com/"
+    }
+  },
   "navigation": {
     "tabs": [
+      {
+        "tab": "Guide",
+        "pages": [
+          "guide/introduction",
+          "guide/quickstart",
+          "guide/features",
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "guide/core/bot",
+              "guide/core/prompt",
+              "guide/core/conversation"
+            ]
+          }
+        ]
+      },
       {
         "tab": "API",
         "pages": [
@@ -43,51 +80,23 @@
         ]
       },
       {
-        "tab": "Guide",
-        "pages": [
-          "guide/introduction",
-          "guide/quickstart",
-          "guide/features",
-          {
-            "group": "Core Concepts",
-            "pages": [
-              "guide/core/bot",
-              "guide/core/prompt",
-              "guide/core/conversation",
-              "essentials/settings",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
         "tab": "Resource",
         "pages": [
-          "resource/blog",
-          "resource/contact"
+          "resource/ask",
+          "resource/contact",
+          "resource/blog"
         ]
       }
     ]
   },
-  "logo": {
-    "light": "/assets/logo.png",
-    "dark": "/assets/logo.png"
-  },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Get Started",
-      "href": "https://dashboard.mintlify.com"
-    }
-  },
-  
   "footer": {
     "socials": {
       "website": "https://messagesimproved.com/",
       "x": "https://x.com/meimessaging",
       "facebook": "https://www.facebook.com/meimessaging/",
       "instagram": "https://github.com/mintlify",
-      "youtube": "https://www.youtube.com/@meiapp5208"
+      "youtube": "https://www.youtube.com/@meiapp5208",
+      "medium": "https://medium.com/@meimessaging"
     }
   }
 }
