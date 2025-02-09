@@ -50,17 +50,7 @@
       {
         "tab": "API",
         "pages": [
-          "guide/introduction",
-          "guide/quickstart",
-          "guide/features",
-          {
-            "group": "Core Concepts",
-            "pages": [
-              "guide/core/bot",
-              "guide/core/prompt",
-              "guide/core/conversation"
-            ]
-          }
+          "api/introduction"
         ]
       },
       {
