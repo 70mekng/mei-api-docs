@@ -50,31 +50,31 @@
       {
         "tab": "API",
         "pages": [
-          "api/introduction",
+          "api-reference/introduction",
           {
             "group": "Conversation",
             "pages": [
-              "api/conversation/conversation_api"
+              "api-reference/conversation/conversation_api"
             ]
           },
           {
             "group": "Bot",
             "pages": [
-              "api/bot/create_bot",
-              "api/bot/get_bot_ids"
+              "api-reference/bot/create_bot",
+              "api-reference/bot/get_bot_ids"
             ]
           },
           {
             "group": "Prompts",
             "pages": [
-              "api/prompt/modify_prompt",
-              "api/prompt/retrieve_prompt"
+              "api-reference/prompt/modify_prompt",
+              "api-reference/prompt/retrieve_prompt"
             ]
           },
           {
             "group": "Message",
             "pages": [
-              "api/message/get_total_message_count"
+              "api-reference/message/get_total_message_count"
             ]
           }
         ]
