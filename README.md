@@ -1,3 +1,5 @@
+The API documentation is now live at https://messagesimproved-c95820de.mintlify.app/guide/introduction.
+
 ### Development
 
 Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
