@@ -40,9 +40,7 @@
           {
             "group": "Core Concepts",
             "pages": [
-              "guide/core/bot",
-              "guide/core/prompt",
-              "guide/core/conversation"
+              "guide/core/prompt"
             ]
           }
         ]
